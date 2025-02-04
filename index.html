@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PVis</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="index.js"></script>
+  </head>
+  <body>
+
+    <div id="div1"><canvas id="population-chart"></canvas></div>
+    <div id="div2"><canvas id="dependance-chart"></canvas></div>
+    <div id="div3"><canvas id="effect-chart"></canvas></div>
+    <div id="div4">
+      <div id="controls">
+        Financially stable:<br>
+        <label for="slider">Cont.</label>
+        <input type="range" min="0" max="100" value="50" id="pension-advantage-factor" class="slider">
+        <label for="slider">Pens.</label>
+        <br><br>
+
+        Pension age:<br>
+        <label for="slider">60</label>
+        <input type="range" min="60" max="75" value="0" id="pension-age" class="slider">
+        <label for="slider">75</label>
+        <br>
+        <br>
+
+        Reproductive rate:<br>
+        <label for="slider">1.0 </label>
+        <input type="range" min="100" max="250" value="135" id="reproduction-rate" class="slider">
+        <label for="slider">2.5</label>
+        <br>
+        <br>
+        
+        Migration rate total (/year, IN - OUT):<br>
+        <label for="slider">-100 k</label>
+        <input type="range" min="-100000" max="400000" value="400" id="migration-rate" class="slider">
+        <label for="slider">400 k</label>
+        <br>
+        <br>
+
+        Migration rate OUT (per year and ¤ fee):<br>
+        <label for="slider">0</label>
+        <input type="range" min="0" max="3000" value="0" id="migration-rate-out-per-fee" class="slider">
+        <label for="slider">3 k</label>
+        <br>
+        <br>
+
+        Birth rate drop (per year and 100¤ fee):<br>
+        <label for="slider">0 %</label>
+        <input type="range" min="0" max="20" value="0" id="birth-rate-drop-per-fee" class="slider">
+        <label for="slider">20 %</label>
+        <br>
+        <br>
+
+        Stock investment:<br>
+        <label for="slider">0 B</label>
+        <input type="range" min="0" max="500000000000" value="400" id="stock-investment" class="slider">
+        <label for="slider">500 B</label>
+        <br>
+        <br>
+
+        Stock return (/year):<br>
+        <label for="slider">0 %</label>
+        <input type="range" min="0" max="10" value="400" id="stock-return" class="slider">
+        <label for="slider">10 %</label>
+        <br>
+        <br>
+
+        Birth rate increase (1990-2015) - aka: time machine:<br>
+        <label for="slider">+0 %</label>
+        <input type="range" min="100" max="200" value="100" id="time_machine_birth_factor" class="slider">
+        <label for="slider">+100 %</label>
+        <br>
+        <br>
+      </div>
+    
+
+
+  </body>
+</html>
+
+
+

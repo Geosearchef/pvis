@@ -1,0 +1,44 @@
+
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+div {
+  width: 50%;
+  height: 50%;
+  float: left;
+}
+
+canvas {
+    padding: 2%;
+}
+
+.slider {
+    margin-left: 5pt;
+    margin-right: 5pt;
+}
+
+#div1 {
+  background: #FFF;
+}
+
+#div2 {
+  background: #FFF;
+}
+
+#div3 {
+  background: #FFF;
+}
+
+#div4 {
+  background: #FFF;
+}
+
+#controls {
+    padding: 5%;
+}
+
