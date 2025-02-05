@@ -25,6 +25,12 @@ canvas {
     padding: 5%;
 }
 
+#small-screen-warning {
+  display: none;
+  padding: 5%;
+  color: #a93636;
+}
+
 @media screen and (max-width: 1000px) {
   .pane {
     width: 100% !important;
@@ -38,6 +44,10 @@ canvas {
   
   #controls {
       padding: 5%;
+  }
+
+  #small-screen-warning {
+    display: block;
   }
 }
 
