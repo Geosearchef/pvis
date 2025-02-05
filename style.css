@@ -17,11 +17,28 @@ body {
 
 canvas {
     padding: 2%;
+    width: 100% !important;
 }
 
 
 #controls {
     padding: 5%;
+}
+
+@media screen and (max-width: 1000px) {
+  .pane {
+    width: 100% !important;
+    height: auto !important;
+  }
+  
+  canvas {
+      padding: 2%;
+  }
+  
+  
+  #controls {
+      padding: 5%;
+  }
 }
 
 .column-header {
@@ -48,6 +65,7 @@ canvas {
   display: inline-block;
   vertical-align: top;
   padding-right: 70pt;
+  padding-bottom: 30pt;
 }
 
 .control-container {
@@ -71,4 +89,13 @@ canvas {
 
 .control-container > label {
   display: inline-block;
+}
+
+@media screen and (max-width: 1000px) {
+  .control-container {
+    font-size: small;
+  }
+  .column-header {
+    font-size: 14pt;
+  }
 }
