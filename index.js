@@ -20,15 +20,27 @@ const BLUE = "rgba(17, 139, 232, 1)";
 const BLUE_BACK = "rgba(17, 139, 232, 0.4)";
 
 function init_controls() {
-    document.getElementById("pension-advantage-factor").value = 50;
-    document.getElementById("reproduction-rate").value = 135;
-    document.getElementById("migration-rate").value = 0;
-    document.getElementById("migration-rate-out-per-fee").value = 0;
+  init_main_controls();
+  init_parameter_controls();
+  init_experimental_controls();
+}
+
+function init_main_controls() {
+  document.getElementById("pension-advantage-factor").value = 50;
+  document.getElementById("pension-age").value = 65;
+  document.getElementById("reproduction-rate").value = 135;
+  document.getElementById("migration-rate").value = 0;
+  document.getElementById("stock-investment").value = 200_000_000_000;
+}
+
+function init_parameter_controls() {
+  document.getElementById("migration-rate-out-per-fee").value = 0;
+  document.getElementById("birth-rate-drop-per-fee").value = 0;
+  document.getElementById("stock-return").value = 7;
+}
+
+function init_experimental_controls() {
     document.getElementById("time_machine_birth_factor").value = 100;
-    document.getElementById("pension-age").value = 65;
-    document.getElementById("stock-investment").value = 200_000_000_000;
-    document.getElementById("stock-return").value = 7;
-    document.getElementById("birth-rate-drop-per-fee").value = 0;
 }
 
 function update_charts() {
@@ -275,9 +287,10 @@ function create_charts() {
       update_charts();
 }
 
-window.setInterval(update_charts, 50);
 window.onload = () => {
-    init_controls();
-    create_charts();
+  init_controls();
+  create_charts();
+
+  window.setInterval(update_charts, 50);
 };
 

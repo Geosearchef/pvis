@@ -5,40 +5,70 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-div {
+.pane {
   width: 50%;
   height: 50%;
   float: left;
+  background: #FFF;
 }
 
 canvas {
     padding: 2%;
 }
 
-.slider {
-    margin-left: 5pt;
-    margin-right: 5pt;
-}
-
-#div1 {
-  background: #FFF;
-}
-
-#div2 {
-  background: #FFF;
-}
-
-#div3 {
-  background: #FFF;
-}
-
-#div4 {
-  background: #FFF;
-}
 
 #controls {
     padding: 5%;
 }
 
+.column-header {
+  padding-bottom: 10pt;
+  font-size: 16pt;
+  font-weight: bold;
+}
+
+.reset-button {
+  margin-left: 5pt;
+  padding: 1pt;
+  border-width: 0pt;
+  background-color: #FFF;
+  color: #BBB;
+  vertical-align: middle;
+}
+
+.reset-button:hover {
+  color: #ca4343;
+  cursor: pointer;
+}
+
+.control-column {
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 70pt;
+}
+
+.control-container {
+  font-weight: normal;
+  padding-top: 15pt;
+  padding-bottom: 15pt;
+  padding-left: 15pt;
+}
+
+.control-title {
+  font-weight: bold;
+  padding-bottom: 6pt;
+}
+
+.slider {
+  margin-top: 3pt;
+  display: inline-block;
+  margin-left: 5pt;
+  margin-right: 5pt;
+}
+
+.control-container > label {
+  display: inline-block;
+}

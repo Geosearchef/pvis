@@ -13,72 +13,97 @@
   </head>
   <body>
 
-    <div id="div1"><canvas id="population-chart"></canvas></div>
-    <div id="div2"><canvas id="dependance-chart"></canvas></div>
-    <div id="div3"><canvas id="effect-chart"></canvas></div>
-    <div id="div4">
+    <div id="div1" class="pane"><canvas id="population-chart"></canvas></div>
+    <div id="div2" class="pane"><canvas id="dependance-chart"></canvas></div>
+    <div id="div3" class="pane"><canvas id="effect-chart"></canvas></div>
+    <div id="div4" class="pane">
       <div id="controls">
-        Stabilisiert:<br>
-        <label for="slider">Beitr.</label>
-        <input type="range" min="0" max="100" value="50" id="pension-advantage-factor" class="slider">
-        <label for="slider">Rente</label>
-        <br><br>
+        <div class="control-column">
+          <div class="column-header">Steuerinstrumente <button class="reset-button" onclick="init_main_controls()">Zurücksetzen</button></div>
 
-        Renteneintrittsalter:<br>
-        <label for="slider">60</label>
-        <input type="range" min="60" max="75" value="0" id="pension-age" class="slider">
-        <label for="slider">75</label>
-        <br>
-        <br>
-
-        Fertilitätsrate:<br>
-        <label for="slider">1.0 </label>
-        <input type="range" min="100" max="250" value="135" id="reproduction-rate" class="slider">
-        <label for="slider">2.5</label>
-        <br>
-        <br>
+          <div class="control-container">
+            <div class="control-title">Stabilisationsfokus:</div>
+            <div>
+              <label for="slider">Beitr.</label>
+              <input type="range" min="0" max="100" value="50" id="pension-advantage-factor" class="slider">
+              <label for="slider">Rente</label>
+            </div>
+          </div>
+  
+          <div class="control-container">
+            <div class="control-title">Renteneintrittsalter:</div>
+            <div>
+              <label for="slider">60</label>
+              <input type="range" min="60" max="75" value="0" id="pension-age" class="slider">
+              <label for="slider">75</label>
+            </div>
+          </div>
+          <div class="control-container">
+            <div class="control-title">Fertilitätsrate:</div>
+            <div>
+              <label for="slider">1.0 </label>
+              <input type="range" min="100" max="250" value="135" id="reproduction-rate" class="slider">
+              <label for="slider">2.5</label>
+            </div>
+          </div>
+          <div class="control-container">
+            <div class="control-title">Migrationsrate (/Jahr, Zu + Ab):</div>
+            <div>
+              <label for="slider">-100 k</label>
+              <input type="range" min="-100000" max="400000" value="400" id="migration-rate" class="slider">
+              <label for="slider">400 k</label>
+            </div>
+          </div>
+          <div class="control-container">
+            <div class="control-title">Aktienrente Gesamtinvestment:</div>
+            <div>
+              <label for="slider">0 B</label>
+              <input type="range" min="0" max="500000000000" value="400" id="stock-investment" class="slider">
+              <label for="slider">500 B</label>
+            </div>
+          </div>
+        </div>
         
-        Migrationsrate (/Jahr, Zu + Ab):<br>
-        <label for="slider">-100 k</label>
-        <input type="range" min="-100000" max="400000" value="400" id="migration-rate" class="slider">
-        <label for="slider">400 k</label>
-        <br>
-        <br>
+        <div class="control-column">
+          <div class="column-header">Simulationsparameter <button class="reset-button" onclick="init_parameter_controls()">Zurücksetzen</button></div>
+          <div class="control-container">
+            <div class="control-title">Abwanderungsrate (pro Jahr and ¤ Beitrag):</div>
+            <div>
+              <label for="slider">0</label>
+              <input type="range" min="0" max="3000" value="0" id="migration-rate-out-per-fee" class="slider">
+              <label for="slider">3 k</label>
+            </div>
+          </div>
+          <div class="control-container">
+            <div class="control-title">Geburtsratenreduktion (pro Jahr und 100¤ Beitrag):</div>
+            <div>
+              <label for="slider">0 %</label>
+              <input type="range" min="0" max="20" value="0" id="birth-rate-drop-per-fee" class="slider">
+              <label for="slider">20 %</label>
+            </div>
+          </div>
+          <div class="control-container">
+            <div class="control-title">Aktienrente Ertrag (/Jahr):</div>
+            <div>
+              <label for="slider">0 %</label>
+              <input type="range" min="0" max="10" value="400" id="stock-return" class="slider">
+              <label for="slider">10 %</label>
+            </div>
+          </div>
 
-        Abwanderungsrate (pro Jahr and ¤ Beitrag):<br>
-        <label for="slider">0</label>
-        <input type="range" min="0" max="3000" value="0" id="migration-rate-out-per-fee" class="slider">
-        <label for="slider">3 k</label>
-        <br>
-        <br>
+          <div class="column-header" style="padding-top: 45pt;">Zeitmaschine <button class="reset-button" onclick="init_experimental_controls()">Zurücksetzen</button></div>
+          <div class="control-container">
+            <div class="control-title">Geburtsratenzuwachs (1990-2015):</div>
+            <div>
+              <label for="slider">+0 %</label>
+              <input type="range" min="100" max="200" value="100" id="time_machine_birth_factor" class="slider">
+              <label for="slider">+100 %</label>
+            </div>
+          </div>
+        </div>
 
-        Geburtsratenreduktion (pro Jahr und 100¤ Beitrag):<br>
-        <label for="slider">0 %</label>
-        <input type="range" min="0" max="20" value="0" id="birth-rate-drop-per-fee" class="slider">
-        <label for="slider">20 %</label>
-        <br>
-        <br>
-
-        Aktienrente Gesamtinvestment:<br>
-        <label for="slider">0 B</label>
-        <input type="range" min="0" max="500000000000" value="400" id="stock-investment" class="slider">
-        <label for="slider">500 B</label>
-        <br>
-        <br>
-
-        Aktienrente Ertrag (/Jahr):<br>
-        <label for="slider">0 %</label>
-        <input type="range" min="0" max="10" value="400" id="stock-return" class="slider">
-        <label for="slider">10 %</label>
-        <br>
-        <br>
-
-        Geburtsratenzuwachs (1990-2015) - auch bekannt als Zeitmaschine:<br>
-        <label for="slider">+0 %</label>
-        <input type="range" min="100" max="200" value="100" id="time_machine_birth_factor" class="slider">
-        <label for="slider">+100 %</label>
-        <br>
-        <br>
+        
+      </div>
       </div>
     
 
