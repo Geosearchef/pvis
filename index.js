@@ -74,7 +74,7 @@ function update_charts() {
     fee_last_year = 0;
 
     for(year = 0; year < 50; year++) {
-        // kill people
+        // simulate deaths
         for(i = 0; i < 100;i++) {
             populationDistribution[i] = Math.floor(populationDistribution[i] * (survival_prob[i]));
         }
@@ -169,21 +169,21 @@ function create_charts() {
           labels: [],
           datasets: [
             {
-                label: 'Total Population',
+                label: 'Gesamtbevölkerung',
                 data: [],
                 borderWidth: 1,
                 borderColor: RED,
                 backgroundColor: RED_BACK,
             },
             {
-                label: 'Working Population',
+                label: 'Erwerbsfähige',
                 data: [],
                 borderWidth: 1,
                 borderColor: ORANGE,
                 backgroundColor: ORANGE_BACK,
             },
             {
-                label: 'Dependant Population',
+                label: 'Nicht Erwerbsfähige',
                 data: [],
                 borderWidth: 1,
                 borderColor: BLUE,
@@ -216,14 +216,14 @@ function create_charts() {
           labels: [],
           datasets: [
             {
-                label: 'Workers per Dependant',
+                label: 'Erwerbsfähige pro Kind/Rentner',
                 data: [],
                 borderWidth: 1,
                 borderColor: BLUE,
                 backgroundColor: BLUE_BACK,
             },
             {
-                label: 'Workers per Senior',
+                label: 'Erwerbsfähige pro Rentner',
                 data: [],
                 borderWidth: 1,
                 borderColor: GREEN,
@@ -246,14 +246,14 @@ function create_charts() {
           labels: [],
           datasets: [
             {
-                label: 'Pension (¤/mon)',
+                label: 'Rente (¤/Mon)',
                 data: [],
                 borderWidth: 1,
                 borderColor: GREEN,
                 backgroundColor: GREEN_BACK,
             },
             {
-                label: 'Contribution (¤/mon)',
+                label: 'Beitrag (¤/Mon)',
                 data: [],
                 borderWidth: 1,
                 borderColor: ORANGE,
