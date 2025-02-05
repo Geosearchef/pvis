@@ -10,13 +10,13 @@ let populationChart = null;
 let dependanceChart = null;
 let effectChart = null;
 
-const ORANGE = "rgb(245, 146, 8, 1)";
+const ORANGE = "rgba(245, 146, 8, 1)";
 const ORANGE_BACK = "rgba(245, 146, 8, 0.4)";
 const GREEN = "rgba(61, 144, 6, 1)";
 const GREEN_BACK = "rgba(61, 144, 6, 0.4)";
 const RED = "rgba(243, 50, 32, 1)";
 const RED_BACK = "rgba(243, 50, 32, 0.4)";
-const BLUE = "rgb(17, 139, 232, 1)";
+const BLUE = "rgba(17, 139, 232, 1)";
 const BLUE_BACK = "rgba(17, 139, 232, 0.4)";
 
 function init_controls() {
